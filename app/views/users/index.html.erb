@@ -1,0 +1,24 @@
+
+
+<div class="container">
+
+  <h1 class="page-header"> Welcome to fakeReddit!<small> -seriously its fake.</small> </h1>
+
+  <div>
+    <%= link_to "Add a New Link", new_user_path %>
+  </div>
+  <br>
+  <ul>
+    <% @links.each do |link| %>
+      <li>
+        <h4> <%= link.title.upcase %> </h4>
+        <%= link_to(link.url, link.url) %>
+        <br>
+        <p>
+          Posted by: <%= link.user.name %>
+          - Votes = <%= link.vote %>
+        </p>
+      </li>
+    <% end %>
+  </ul>
+</div>
