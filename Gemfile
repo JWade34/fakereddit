@@ -43,3 +43,4 @@ end
 
 
 gem 'bootstrap-sass'
+gem 'rails_12factor'
