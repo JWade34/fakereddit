@@ -1,0 +1,27 @@
+
+
+<div class="container">
+
+  <h1 class="page-header"> Welcome to fReddit!<small> -the new black hole</small> </h1>
+
+  <div>
+    <%= link_to "Add a New Link", new_user_path %>
+  </div>
+  <br>
+  <ul>
+    <% @links.each do |link| %>
+      <li>
+        <div class="alert alert-info" role="alert">
+        <h4> <%= link.title.upcase %> </h4>
+        <!-- <%= link_to(link.url, link.url) %> -->
+        <%= link_to link.url, vote_path(link) %>
+        <br>
+        <p>
+          Posted by: <%= link.user.name %>
+          --- <%= pluralize link.vote, 'views' %>
+        </p>
+      </div>
+      </li>
+    <% end %>
+  </ul>
+</div>
