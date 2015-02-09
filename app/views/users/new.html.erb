@@ -4,6 +4,12 @@
 
   <%= form_for @link do |f| %>
 
+  <div>
+    <%= f.label :title %>
+    <br/>
+    <%= f.text_field :title %>
+  </div>
+
     <div>
       <%= f.label :url %>
       <br/>
@@ -13,7 +19,7 @@
     <div>
       <%= f.label :user %>
       <br/>
-      <%= f.text_field :user %>
+      <%= f.select(:user_id, User.all.map {|p| [p.name, p.id]}) %>
     </div>
 
     <div>
