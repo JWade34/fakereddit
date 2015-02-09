@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :users
   resources :links
 
-  get 'links/:id/vote' => "links#vote" as: :vote
+  get 'links/:id/vote' => "links#vote", as: :vote
 
 
   # The priority is based upon order of creation: first created -> highest priority.

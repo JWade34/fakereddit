@@ -17,7 +17,7 @@ class LinksController < ApplicationController
     @link = Link.find params[:id]
     @link.vote += 1
     @link.save
-    redirect_to root_path
+    redirect_to @link.url
   end
 
 end
